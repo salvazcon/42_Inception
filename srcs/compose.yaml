@@ -17,8 +17,8 @@ services:
     container_name: wordpress
     env_file:
       - .env
-        #    ports:
-        #      - "9000:9000"
+    ports:
+      - "9000:9000"
     restart: always
     volumes:
       - webserver:/var/www/html
@@ -36,8 +36,8 @@ services:
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     container_name: mariadb
-      #    ports:
-      #      - "3306:3306"
+      ports:
+      - "3306:3306"
     restart: always
     volumes:
       - mysql:/var/lib/mysql/
